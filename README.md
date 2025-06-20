@@ -15,7 +15,7 @@
 ## 🚀 Quick Start
 
 ```bash
-git clone https://github.com/yourname/redeye.git
+git clone https://github.com/Phoenix-sudo-tech/red-eye
 cd redeye
 chmod +x setup.sh launch.sh
 ./setup.sh        # installs php, ngrok, cloudflared if missing
