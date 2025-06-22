@@ -23,6 +23,15 @@ chmod +x setup.sh launch.sh
 ./redeye.sh       # starts the launcher
 ````
 
+## 🧰 IMPORTANT : 
+
+THIS TOOL IS NOT OPTIMISED FOR TERMUX 
+IF U FACE PROBLEM IN NGROK , RUN IT MANUALLY BEFORE RUNNING THIS TOOL
+
+---
+
+
+
 ---
 
 ## 🧰 Requirements
