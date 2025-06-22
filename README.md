@@ -2,7 +2,7 @@
 
 
 
-## ⚙️ Features
+## ⚙️ Features (beta)
 
 - 🎯 Multiple phishing templates: `Instagram`, `Free Fire`, `Call of Duty`, `PUBG`
 - 🕳️ Tunnel choices: `Ngrok`, `Cloudflared`, or `Localhost`
