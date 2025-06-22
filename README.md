@@ -18,9 +18,9 @@
 ```bash
 git clone https://github.com/Phoenix-sudo-tech/red-eye
 cd redeye
-chmod +x setup.sh launch.sh
-./setup.sh        # installs php, ngrok, cloudflared if missing
-./redeye.sh       # starts the launcher
+chmod +x *
+bash setup.sh
+bash redeye.sh      
 ````
 
 ## 🧰 IMPORTANT : 
